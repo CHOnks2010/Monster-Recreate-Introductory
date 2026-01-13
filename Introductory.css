@@ -73,10 +73,5 @@ body {
   filter: blur(0.2vh);
 }
 
-/* Optional: improve look on larger screens */
-@media (min-width: 768px) {
-  .canvas {
-    height: 100vh;
-  }
-}
+
 
