@@ -29,6 +29,46 @@ body {
   width: 140vw;
   height: 1.2vh;
   background: linear-gradient(
+    90deg,/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", monospace;
+}
+
+body {
+  min-height: 100vh;
+  background: #000;
+  color: #b6ff6a;
+}
+
+/* =====================
+   BACKGROUND CANVAS
+===================== */
+.canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    ellipse at center,
+    #001a14 0%,
+    #000c09 45%,
+    #000 100%
+  );
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Neon streaks */
+.streak {
+  position: absolute;
+  width: 140vw;
+  height: 1.2vh;
+  background: linear-gradient(
     90deg,
     transparent,
     rgba(0, 255, 180, 0.75),
@@ -38,22 +78,9 @@ body {
   transform: rotate(-12deg);
 }
 
-.streak-1 {
-  top: 25vh;
-  left: -20vw;
-}
-
-.streak-2 {
-  top: 45vh;
-  left: -25vw;
-  opacity: 0.55;
-}
-
-.streak-3 {
-  top: 15vh;
-  left: -5vw;
-  opacity: 0.35;
-}
+.streak-1 { top: 25vh; left: -20vw; }
+.streak-2 { top: 45vh; left: -25vw; opacity: 0.55; }
+.streak-3 { top: 15vh; left: -5vw; opacity: 0.35; }
 
 /* Dotted diagonal line */
 .dots {
@@ -73,5 +100,88 @@ body {
   filter: blur(0.2vh);
 }
 
+/* =====================
+   UI CONTAINER
+===================== */
+.container {
+  min-height: 100vh;
+  padding: 6vh 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Title */
+.title {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  letter-spacing: 0.2em;
+  margin-bottom: 5vh;
+  text-shadow: 0 0 12px rgba(182, 255, 106, 0.6);
+}
+
+/* Monster claw logo */
+.logo {
+  display: flex;
+  gap: 1.5vw;
+  margin-bottom: 4vh;
+}
+
+.logo span {
+  width: 3.5vw;
+  min-width: 14px;
+  height: 12vh;
+  background: linear-gradient(#d9ff7a, #5cff2a);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(120, 255, 120, 0.6);
+  transform: skewY(-10deg);
+}
+
+/* Tagline */
+.tagline {
+  font-size: 1.1rem;
+  margin-bottom: 7vh;
+  text-shadow: 0 0 8px rgba(182, 255, 106, 0.5);
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
+  margin-bottom: 5vh;
+}
+
+.or {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.btn {
+  padding: 1rem 2.4rem;
+  border-radius: 999px;
+  background: linear-gradient(to right, #2f7f63, #3cae7a);
+  color: #d8ff9c;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 0 15px rgba(80, 255, 180, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* Enlarge slightly on hover / tap */
+.btn:hover,
+.btn:active {
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(120, 255, 180, 0.7);
+}
+
+/* Sponsors */
+.sponsors {
+  margin-top: auto;
+  margin-bottom: 4vh;
+  padding: 1rem 3rem;
+}
 
 
